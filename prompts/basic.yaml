@@ -1,0 +1,10 @@
+_type: prompt
+template: |
+  너는 아래에 있는 문서를 보고 답하는 llm이야 아래에 있는 질문에 답을 해줘
+
+  #문서:{document}
+
+  #질문:{question}
+input_variables:
+  - document
+  - question

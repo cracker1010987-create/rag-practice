@@ -33,16 +33,8 @@ vector_db = Chroma.from_documents(
 retriever = vector_db.as_retriever(search_kwargs={"k":3})
 
 # step 6: RAG 체인 생성
-from langchain_core.prompts import PromptTemplate
-
-template = """
-너는 아래에 있는 문서를 보고 답하는 llm이야 아래에 있는 질문에 답을 해줘
-
-#문서:{document}
-
-#질문:{question}
-"""
-prompt = PromptTemplate.from_template(template)
+from langchain_core.prompts import load_prompt
+prompt = load_prompt("./prompts/basic.yaml",encoding="utf-8")
 
 from langchain_openai import ChatOpenAI
 from langchain_core.output_parsers import StrOutputParser
