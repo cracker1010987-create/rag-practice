@@ -34,7 +34,7 @@ retriever = vector_db.as_retriever(search_kwargs={"k":3})
 
 # step 6: RAG 체인 생성
 from langchain_core.prompts import load_prompt
-prompt = load_prompt("./prompts/basic.yaml",encoding="utf-8")
+prompt = load_prompt("./prompts/basic_prompt_v1.yaml",encoding="utf-8")
 
 from langchain_openai import ChatOpenAI
 from langchain_core.output_parsers import StrOutputParser
